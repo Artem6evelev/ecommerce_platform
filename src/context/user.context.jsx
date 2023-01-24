@@ -17,6 +17,10 @@ export const USER_ACTION_TYPES = {
   SET_CURRENT_USER: "SET_CURRENT_USER",
 };
 
+const INITIAL_STATE = {
+  currentUser: null,
+};
+
 const userReducer = (state, action) => {
   const { type, payload } = action;
 
@@ -29,10 +33,6 @@ const userReducer = (state, action) => {
     default:
       throw new Error(`Unhandled type ${type} in userReducer`);
   }
-};
-
-const INITIAL_STATE = {
-  currentUser: null,
 };
 
 export const UserProvider = ({ children }) => {
